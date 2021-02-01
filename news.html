@@ -1,0 +1,25 @@
+{% extends 'base_layout.html' %}
+
+{% block body %}
+<div class="search-news">
+
+        <form class="form" align="left">
+            <input
+            type="text"
+            name="news"
+            class="src-news"
+            placeholder="searching..."
+            />
+            <input type="submit" value="search" class="search" />
+        </form>
+
+    {% for new,des,link in context %}
+    <div class="content-news">
+        <h2>{{new}}</h2>
+        <h3>{{des}}</h3>
+        <br>
+        <a href="{{link}}" target="_blank">Read More</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
